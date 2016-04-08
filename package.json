@@ -1,0 +1,25 @@
+{
+  "name": "battleships",
+  "version": "1.0.0",
+  "description": "JS implementation of the famous Battleships game",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/wizardone/battleships.git"
+  },
+  "keywords": [
+    "game",
+    "javascript",
+    "es6",
+    "react"
+  ],
+  "author": "Stefan Slaveykov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wizardone/battleships/issues"
+  },
+  "homepage": "https://github.com/wizardone/battleships#readme"
+}

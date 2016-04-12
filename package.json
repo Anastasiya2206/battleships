@@ -21,5 +21,12 @@
   "bugs": {
     "url": "https://github.com/wizardone/battleships/issues"
   },
-  "homepage": "https://github.com/wizardone/battleships#readme"
+  "homepage": "https://github.com/wizardone/battleships#readme",
+  "devDependencies": {
+    "react": "^15.0.1",
+    "react-dom": "^15.0.1",
+    "react-redux": "^4.4.2",
+    "redux": "^3.4.0",
+    "webpack": "^1.12.15"
+  }
 }

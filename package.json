@@ -4,7 +4,8 @@
   "description": "JS implementation of the famous Battleships game",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start": "webpack-dev-server --port 3001"
   },
   "repository": {
     "type": "git",

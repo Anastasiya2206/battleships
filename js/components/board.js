@@ -14,17 +14,19 @@ export default class Board extends React.Component {
   }
 
   render() {
+    let tbody = range(ROWS).map((row) => {
+      return <tr className="Row" key={row}>
+        {range(COLUMNS).map((column) => {
+          return <td key={column}>column</td>
+        })}
+        </tr>
+    });
+
     return (
       <div>
       <table className="board-table">
       <tbody>
-      {range(ROWS).map((row) => {
-        return <tr className="Row" key={row}>
-          {range(COLUMNS).map((column) => {
-            return <td className="Column" key={column}>column</td>
-          })}
-        </tr>
-      })}
+        {tbody}
       </tbody>
       </table>
       </div>

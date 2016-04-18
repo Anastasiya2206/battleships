@@ -8,10 +8,11 @@ class App extends React.Component {
   }
 
   render() {
+    let player1 = 'player1';
+    let player2 = 'player2';
     return (
       <div>
-        <div><Board /></div>
-        <div><Board /></div>
+      <Board player="player1"/>
       </div>
     )
   }

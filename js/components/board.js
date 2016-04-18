@@ -22,8 +22,11 @@ export default class Board extends React.Component {
         </tr>
     });
 
+    let info = <b>{this.props.player} board</b>
+
     return (
-      <div>
+      <div style={{float: 'left'}}>
+      {info}
       <table className="board-table">
       <tbody>
         {tbody}

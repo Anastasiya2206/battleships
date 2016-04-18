@@ -13,6 +13,8 @@ class App extends React.Component {
     return (
       <div>
       <Board player="player1"/>
+      <p></p>
+      <Board player="player2"/>
       </div>
     )
   }

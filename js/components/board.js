@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDom from 'react-dom'
+import Battleship from '../battleship.js'
 
 const ROWS = 10;
 const COLUMNS = 10;

@@ -14,11 +14,16 @@ class App extends React.Component {
 
     return (
       <div>
-      <Board player={player1}/>
-      <Board player={player2}/>
+      <div className='col-lg-6'>
+        <Board player={player1}/>
+        <Drawer player={player1}/>
+      </div>
+      <div className='col-lg-6'>
+        <Board player={player2}/>
+        <Drawer player={player2}/>
+      </div>
       </div>
     )
   }
 }
-ReactDom.render(<Drawer />, document.getElementById('drawer'));
 ReactDom.render(<App />, document.getElementById('main'));

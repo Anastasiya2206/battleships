@@ -1,13 +1,10 @@
-import React from 'react'
-import ReactDom from 'react-dom'
-import Battleship from '../battleship.js'
+import React from 'react';
+import ReactDom from 'react-dom';
+import Battleship from '../battleship.js';
+import range from '../helpers/functions.js';
 
 const ROWS = 10;
 const COLUMNS = 10;
-
-let range = (total) => {
-  return Array.apply(0, Array(total)).map((el, index) => index );
-}
 
 export default class Board extends React.Component {
   constructor(data) {
@@ -16,9 +13,9 @@ export default class Board extends React.Component {
 
   render() {
     let tbody = range(ROWS).map((row) => {
-      return <tr className="Row" key={row}>
+      return <tr className="row" key={row}>
         {range(COLUMNS).map((column) => {
-          return <td key={column}>column</td>
+          return <td key={column} className="column">x</td>
         })}
         </tr>
     });
@@ -28,7 +25,7 @@ export default class Board extends React.Component {
     return (
       <div>
       {info}
-      <table className="board-table">
+      <table className="table table-bordered table-condensed table-hover">
       <tbody>
         {tbody}
       </tbody>

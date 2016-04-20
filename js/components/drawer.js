@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import CONFIG from '../../config/config.js'
+import range from '../helpers/functions.js';
+import CONFIG from '../../config/config.js';
 
 export default class Drawer extends React.Component {
   constructor(data) {
@@ -11,11 +12,9 @@ export default class Drawer extends React.Component {
 
   render() {
     return <div className='battleship-drawer'>
-      <div>Battleship 1</div>
-      <div>Battleship 2</div>
-      <div>Battleship 3</div>
-      <div>Battleship 4</div>
-      <div>Battleship 5</div>
+      {range(this.state.battleshipsCount).map((index) => {
+        return <div className='battleship'>Battleship {index}</div>;
+      })}
     </div>
   }
 }

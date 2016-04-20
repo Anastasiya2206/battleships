@@ -1,5 +1,10 @@
 const CONFIG = new Map();
-CONFIG.set('battleshipTypes', ['tiny', 'small', 'regular', 'big', 'huge']);
-CONFIG.set('battleshipCount', 5);
+CONFIG.set('battleshipTypes', {
+  'tiny': 1,
+  'small': 2,
+  'normal': 3,
+  'big': 4,
+  'huge': 5
+});
 
 module.exports = CONFIG;

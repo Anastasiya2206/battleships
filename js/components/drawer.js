@@ -6,15 +6,27 @@ import CONFIG from '../../config/config.js';
 export default class Drawer extends React.Component {
   constructor(data) {
     super(data);
-    this.state = { battleshipsCount: CONFIG.get('battleshipCount'),
+    this.state = { battleshipTypes: CONFIG.get('battleshipTypes'),
                    battleshipsUsed: 0 };
   }
 
+  displayBattleships() {
+    let display = [];
+    let obj = this.state.battleshipTypes;
+    Object.keys(this.state.battleshipTypes).forEach((key) => {
+      display.push(<div className={key} key={obj[key]}>{key.toUpperCase()} Battleship</div>);
+    });
+    return display;
+  }
+
   render() {
-    return <div className='battleship-drawer'>
-      {range(this.state.battleshipsCount).map((index) => {
-        return <div className='battleship'>Battleship {index}</div>;
-      })}
-    </div>
+    let obj = this.state.battleshipTypes;
+
+    return (
+      <div className='battleship-drawer'>
+        <b>Available Battleships:</b>
+        { this.displayBattleships() }
+      </div>
+    )
   }
 }

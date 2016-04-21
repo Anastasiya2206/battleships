@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import range from '../helpers/functions.js';
 import CONFIG from '../../config/config.js';
+import Battleship from './battleship.js';
 
 export default class Drawer extends React.Component {
   constructor(data) {
@@ -10,11 +11,16 @@ export default class Drawer extends React.Component {
                    battleshipsUsed: 0 };
   }
 
+  onDragStart(event) {
+    console.log('dragg');
+    console.log(event.target);
+  }
+
   displayBattleships() {
     let display = [];
     let obj = this.state.battleshipTypes;
     Object.keys(this.state.battleshipTypes).forEach((key) => {
-      display.push(<div className={key} key={obj[key]}>{key.toUpperCase()} Battleship</div>);
+      display.push(<Battleship type={key} key={key}/>);
     });
     return display;
   }

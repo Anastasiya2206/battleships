@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import Battleship from '../battleship.js';
 import range from '../helpers/functions.js';
 
 const ROWS = 10;
@@ -13,9 +12,9 @@ export default class Board extends React.Component {
 
   render() {
     let tbody = range(ROWS).map((row) => {
-      return <tr className="row" key={row}>
+      return <tr key={row} className="row-md-1">
         {range(COLUMNS).map((column) => {
-          return <td key={column} className="column">x</td>
+          return <td key={column} className="col-md-1">x</td>
         })}
         </tr>
     });
@@ -25,7 +24,7 @@ export default class Board extends React.Component {
     return (
       <div>
       {info}
-      <table className="table table-bordered table-condensed table-hover">
+      <table className="table table-bordered table-condensed">
       <tbody>
         {tbody}
       </tbody>

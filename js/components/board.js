@@ -10,11 +10,26 @@ export default class Board extends React.Component {
     super(data);
   }
 
+  onDrop(event) {
+    console.log(event.target)
+    let ship = event.dataTransfer.getData('ship');
+    console.log(ship);
+    event.target.appendChild(document.getElementById(ship));
+  }
+
+  onMouseOver(e) {
+    console.log('mouseover');
+  }
+
+  allowDrop(event) {
+    event.preventDefault();
+  }
+
   render() {
     let tbody = range(ROWS).map((row) => {
       return <tr key={row} className="row-md-1">
         {range(COLUMNS).map((column) => {
-          return <td key={column} className="col-md-1">x</td>
+          return <td key={column} className="col-md-1" onDrop={this.onDrop} onDragOver={this.allowDrop}></td>
         })}
         </tr>
     });
@@ -22,13 +37,13 @@ export default class Board extends React.Component {
     let info = <b>{this.props.player} board</b>
 
     return (
-      <div>
+      <div className='board'>
       {info}
-      <table className="table table-bordered table-condensed">
-      <tbody>
-        {tbody}
-      </tbody>
-      </table>
+        <div className='board-grid'>
+          {range(ROWS).map((row) => {
+            return <div className='cell-grid'></div>
+          })}
+        </div>
       </div>
     )
   }

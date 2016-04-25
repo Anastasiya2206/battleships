@@ -1,7 +1,9 @@
-import React from 'react'
-import ReactDom from 'react-dom'
-import Board from './components/board.js'
-import Drawer from './components/drawer.js'
+import React from 'react';
+import ReactDom from 'react-dom';
+import { createStore } from 'redux';
+import Board from './components/board.js';
+import Drawer from './components/drawer.js';
+
 
 class App extends React.Component {
   constructor(data) {
@@ -10,7 +12,7 @@ class App extends React.Component {
 
   render() {
     let player1 = 'player1';
-    let player2 = 'player2';
+    let player2 = 'Ze AI';
 
     return (
       <div>
@@ -20,7 +22,6 @@ class App extends React.Component {
       </div>
       <div className='col-lg-6'>
         <Board player={player2}/>
-        <Drawer player={player2}/>
       </div>
       </div>
     )

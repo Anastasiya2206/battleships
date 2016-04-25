@@ -3,7 +3,7 @@ import ReactDom from 'react-dom';
 import { createStore } from 'redux';
 import Board from './components/board.js';
 import Drawer from './components/drawer.js';
-
+import battleShip from './redux/reducer.js';
 
 class App extends React.Component {
   constructor(data) {

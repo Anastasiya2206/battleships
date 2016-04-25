@@ -8,3 +8,8 @@ const startPositioning = (battleship) => {
 const endPositioning = (battleship) => {
   return { type: END_POSITIONING, battleship };
 }
+
+module.exports = {
+  startPositioning: startPositioning,
+  endPositioning: endPositioning
+}

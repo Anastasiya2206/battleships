@@ -1,9 +1,20 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 import Board from './components/board.js';
 import Drawer from './components/drawer.js';
-import battleShip from './redux/reducer.js';
+import battleshipApp from './redux/reducer.js';
+import defaultState from './redux/state.js';
+import {startPositioning, endPositioning} from './redux/actions/positioning.js';
+
+const store = createStore(battleshipApp);
+console.log(store.getState());
+let unsubscribe = store.subscribe(() =>
+  console.log(store.getState())
+)
+store.dispatch(startPositioning(2));
+unsubscribe();
 
 class App extends React.Component {
   constructor(data) {
@@ -27,4 +38,9 @@ class App extends React.Component {
     )
   }
 }
-ReactDom.render(<App />, document.getElementById('main'));
+ReactDom.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('main')
+);

@@ -1,15 +1,10 @@
 export const START_POSITIONING = 'START_POSITIONING';
 export const END_POSITIONING = 'END_POSITIONING';
 
-export const startPositioning = (battleship) => {
-  return { type: START_POSITIONING, battleship };
+export const startPositioning = (id) => {
+  return { type: START_POSITIONING, battleshipId: id };
 }
 
-export const endPositioning = (battleship) => {
-  return { type: END_POSITIONING, battleship };
+export const endPositioning = (id) => {
+  return { type: END_POSITIONING, battleshipId: id };
 }
-
-/*module.exports = {
-  startPositioning: startPositioning,
-  endPositioning: endPositioning
-}*/

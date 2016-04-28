@@ -9,13 +9,10 @@ import defaultState from './redux/state.js';
 import {startPositioning, endPositioning} from './redux/actions/positioning.js';
 
 const store = createStore(battleshipApp);
-console.log(store.getState());
-let unsubscribe = store.subscribe(() =>
-  console.log(store.getState())
-)
-store.dispatch(startPositioning(2));
-unsubscribe();
-
+/*const Test = ({tester}) => {
+  return <h1>{tester}</h1>;
+}
+*/
 class App extends React.Component {
   constructor(data) {
     super(data);
@@ -28,8 +25,8 @@ class App extends React.Component {
     return (
       <div>
       <div className='col-lg-6'>
-        <Board player={player1}/>
-        <Drawer player={player1}/>
+        <Board player={player1} store={store}/>
+        <Drawer player={player1} store={store}/>
       </div>
       <div className='col-lg-6'>
         <Board player={player2}/>

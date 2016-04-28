@@ -3,10 +3,18 @@ import ReactDom from 'react-dom';
 import range from '../helpers/functions.js';
 import CONFIG from '../../config/config.js';
 
+import { createStore } from 'redux';
+import battleshipApp from '../redux/reducer.js';
+import {startPositioning, endPositioning} from '../redux/actions/positioning.js';
+
 export default class Battleship extends React.Component {
   constructor(data) {
     super(data);
     this.state = { deployed: false, selected: false }
+  }
+
+  componentDidMount() {
+    this.store = this.props.store;
   }
 
   onDragStart(event) {
@@ -14,8 +22,8 @@ export default class Battleship extends React.Component {
   }
 
   onClick(e) {
-    console.log('clicked');
-    this.setState({ selected: true })
+    this.setState({ selected: true });
+    this.store.dispatch(startPositioning(this.props.type));
   }
 
   render() {

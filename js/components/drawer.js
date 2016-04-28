@@ -9,6 +9,7 @@ export default class Drawer extends React.Component {
     super(data);
     this.state = { battleshipTypes: CONFIG.get('battleshipTypes'),
                    battleshipsUsed: 0 };
+    this.store = this.props.store;
   }
 
   onDragStart(event) {
@@ -20,13 +21,16 @@ export default class Drawer extends React.Component {
     let display = [];
     let obj = this.state.battleshipTypes;
     Object.keys(this.state.battleshipTypes).forEach((key) => {
-      display.push(<Battleship type={key} key={key}/>);
+      display.push(<Battleship type={key} key={key} store={this.store}/>);
     });
     return display;
   }
 
   render() {
     let obj = this.state.battleshipTypes;
+    let store = this.context;
+
+    console.log(store);
 
     return (
       <div className='battleship-drawer'>

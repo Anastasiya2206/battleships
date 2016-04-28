@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import range from '../helpers/functions.js';
+import { createStore } from 'redux';
+import battleshipApp from '../redux/reducer.js';
 
 const CELLS = 100;
 
@@ -9,15 +11,18 @@ export default class Board extends React.Component {
     super(data);
   }
 
+  componentDidMount() {
+    this.store = this.props.store;
+  }
+
   onDrop(event) {
     console.log(event.target)
     let ship = event.dataTransfer.getData('ship');
-    console.log(ship);
     event.target.appendChild(document.getElementById(ship));
   }
 
   onMouseOver(e) {
-    console.log('mouseover');
+    console.log(this.store.getState());
   }
 
   allowDrop(event) {
@@ -30,9 +35,9 @@ export default class Board extends React.Component {
     return (
       <div className='board'>
       {info}
-        <div className='board-grid'>
+        <div className='board-grid' onMouseOver={this.onMouseOver.bind(this)}>
           {range(CELLS).map((row) => {
-            return <div className='cell-grid'></div>
+            return <div className='cell-grid' key={row}></div>
           })}
         </div>
       </div>

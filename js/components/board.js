@@ -12,8 +12,7 @@ export default class Board extends React.Component {
   }
 
   componentDidMount() {
-    //this.store = this.props.store;
-    //const { store } = this.props;
+    const { store } = this.context;
   }
 
   onDrop(event) {

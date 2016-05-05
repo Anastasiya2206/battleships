@@ -9,7 +9,10 @@ export default class Drawer extends React.Component {
     super(data);
     this.state = { battleshipTypes: CONFIG.get('battleshipTypes'),
                    battleshipsUsed: 0 };
-    //this.store = this.props.store;
+  }
+
+  componentDidMount() {
+    const { store } = this.context;
   }
 
   onDragStart(event) {

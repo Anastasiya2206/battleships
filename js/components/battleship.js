@@ -14,7 +14,7 @@ export default class Battleship extends React.Component {
   }
 
   componentDidMount() {
-    this.store = this.props.store;
+    this.store = this.context;
   }
 
   onDragStart(event) {

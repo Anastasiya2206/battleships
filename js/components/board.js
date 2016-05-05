@@ -12,7 +12,8 @@ export default class Board extends React.Component {
   }
 
   componentDidMount() {
-    this.store = this.props.store;
+    //this.store = this.props.store;
+    //const { store } = this.props;
   }
 
   onDrop(event) {
@@ -22,7 +23,7 @@ export default class Board extends React.Component {
   }
 
   onMouseOver(e) {
-    console.log(this.store.getState());
+    //console.log(this.store.getState());
   }
 
   allowDrop(event) {
@@ -30,6 +31,7 @@ export default class Board extends React.Component {
   }
 
   render() {
+    const { store } = this.props
     let info = <b>{this.props.player} board</b>
 
     return (

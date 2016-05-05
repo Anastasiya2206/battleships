@@ -1,11 +1,10 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import { createStore } from 'redux';
-import { Provider } from 'react-redux';
 import Board from './components/board.js';
 import Drawer from './components/drawer.js';
+import Provider from './components/provider.js'
 import battleshipApp from './redux/reducer.js';
-import defaultState from './redux/state.js';
 import {startPositioning, endPositioning} from './redux/actions/positioning.js';
 
 const store = createStore(battleshipApp);
@@ -13,10 +12,19 @@ const store = createStore(battleshipApp);
   return <h1>{tester}</h1>;
 }
 */
+
 class App extends React.Component {
   constructor(data) {
     super(data);
   }
+
+  componentDidMount() {
+    const { store } = this.context;
+  }
+
+  /*static contextTypes() {
+    store: React.PropTypes.object
+  }*/
 
   render() {
     let player1 = 'player1';
@@ -25,8 +33,8 @@ class App extends React.Component {
     return (
       <div>
       <div className='col-lg-6'>
-        <Board player={player1} store={store}/>
-        <Drawer player={player1} store={store}/>
+        <Board player={player1}/>
+        <Drawer player={player1}/>
       </div>
       <div className='col-lg-6'>
         <Board player={player2}/>
@@ -35,6 +43,10 @@ class App extends React.Component {
     )
   }
 }
+App.contextTypes = {
+  store: React.PropTypes.object
+}
+
 ReactDom.render(
   <Provider store={store}>
     <App />

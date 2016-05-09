@@ -14,7 +14,7 @@ export default class Battleship extends React.Component {
   }
 
   componentDidMount() {
-    this.store = this.context;
+    const { store } = this.context;
   }
 
   onDragStart(event) {
@@ -27,8 +27,15 @@ export default class Battleship extends React.Component {
   }
 
   render() {
-    return <div className={this.props.type} id={this.props.type} onClick={this.onClick.bind(this)}>
+    let { store } = this.context;
+
+    return <div className={this.props.type} id={this.props.type} onClick={() =>
+                                                                  store.dispatch(startPositioning(this.props.type))
+                                                                 }>
             {this.props.type}
            </div>
   }
+}
+Battleship.contextTypes = {
+  store: React.PropTypes.object
 }

@@ -31,9 +31,7 @@ export default class Drawer extends React.Component {
 
   render() {
     let obj = this.state.battleshipTypes;
-    let store = this.context;
-
-    console.log(store);
+    let { store } = this.context;
 
     return (
       <div className='battleship-drawer'>
@@ -42,4 +40,7 @@ export default class Drawer extends React.Component {
       </div>
     )
   }
+}
+Drawer.contextTypes = {
+  store: React.PropTypes.object
 }

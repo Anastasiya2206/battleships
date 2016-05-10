@@ -22,10 +22,6 @@ class App extends React.Component {
     const { store } = this.context;
   }
 
-  /*static contextTypes() {
-    store: React.PropTypes.object
-  }*/
-
   render() {
     let player1 = 'player1';
     let player2 = 'Ze AI';

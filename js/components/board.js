@@ -12,7 +12,14 @@ export default class Board extends React.Component {
   }
 
   componentDidMount() {
-    const { store } = this.context;
+    this.store = this.context.store;
+    let unSubscribe = this.store.subscribe(() => {
+      console.log('store changed')
+    });
+  }
+
+  componentWillUnmount() {
+    unSubscribe();
   }
 
   onDrop(event) {
@@ -22,7 +29,7 @@ export default class Board extends React.Component {
   }
 
   onMouseOver(e) {
-    //console.log(this.store.getState());
+    console.log(this.store.getState());
   }
 
   allowDrop(event) {
@@ -44,4 +51,7 @@ export default class Board extends React.Component {
       </div>
     )
   }
+}
+Board.contextTypes = {
+  store: React.PropTypes.object
 }

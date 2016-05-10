@@ -24,7 +24,7 @@ export default class Drawer extends React.Component {
     let display = [];
     let obj = this.state.battleshipTypes;
     Object.keys(this.state.battleshipTypes).forEach((key) => {
-      display.push(<Battleship type={key} key={key} store={this.store}/>);
+      display.push(<Battleship type={key} key={key}/>);
     });
     return display;
   }

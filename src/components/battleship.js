@@ -5,9 +5,10 @@ import CONFIG from '../../config/config.js';
 
 import { createStore } from 'redux';
 import battleshipApp from '../redux/reducer.js';
-import {startPositioning, endPositioning} from '../redux/actions/positioning.js';
+import { startPositioning, endPositioning } from '../redux/actions/positioning.js';
 
 export default class Battleship extends React.Component {
+
   constructor(data) {
     super(data);
     this.state = { deployed: false, selected: false }
@@ -29,10 +30,8 @@ export default class Battleship extends React.Component {
   render() {
     let { store } = this.context;
 
-    return <div className={this.props.type} id={this.props.type} onClick={() =>
-                                                                  store.dispatch(startPositioning(this.props.type))
-                                                                 }>
-            {this.props.type}
+    return <div className={this.props.type} id={this.props.type}>
+              {this.props.type}
            </div>
   }
 }

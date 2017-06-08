@@ -5,6 +5,7 @@ import CONFIG from '../../config/config.js';
 import Battleship from './battleship.js';
 
 export default class Drawer extends React.Component {
+
   constructor(data) {
     super(data);
     this.state = { battleshipTypes: CONFIG.get('battleshipTypes'),

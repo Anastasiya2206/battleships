@@ -5,7 +5,7 @@ import Board from './components/board.js';
 import Drawer from './components/drawer.js';
 import Provider from './components/provider.js'
 import battleshipApp from './redux/reducer.js';
-import {startPositioning, endPositioning} from './redux/actions/positioning.js';
+import { startPositioning, endPositioning } from './redux/actions/positioning.js';
 
 const store = createStore(battleshipApp);
 /*const Test = ({tester}) => {

@@ -7,15 +7,12 @@ import battleshipApp from '../redux/reducer.js';
 const CELLS = 100;
 
 export default class Board extends React.Component {
+
   constructor(data) {
     super(data);
   }
 
   componentDidMount() {
-    this.store = this.context.store;
-    let unSubscribe = this.store.subscribe(() => {
-      console.log('store changed')
-    });
   }
 
   componentWillUnmount() {
@@ -37,13 +34,13 @@ export default class Board extends React.Component {
   }
 
   render() {
-    const { store } = this.props
-    let info = <b>{this.props.player} board</b>
+    const { player } = this.props
+    let info = <b>{player} board</b>
 
     return (
       <div className='board'>
       {info}
-        <div className='board-grid' onMouseOver={this.onMouseOver.bind(this)}>
+        <div className='board-grid'>
           {range(CELLS).map((row) => {
             return <div className='cell-grid' key={row}></div>
           })}

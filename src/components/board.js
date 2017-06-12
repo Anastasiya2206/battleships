@@ -3,6 +3,7 @@ import ReactDom from 'react-dom';
 import range from '../helpers/functions.js';
 import { createStore } from 'redux';
 import battleshipApp from '../redux/reducer.js';
+import { Cell } from './cell.js'
 
 const CELLS = 100;
 
@@ -20,7 +21,6 @@ export default class Board extends React.Component {
   }
 
   onDrop(event) {
-    console.log(event.target)
     let ship = event.dataTransfer.getData('ship');
     event.target.appendChild(document.getElementById(ship));
   }
@@ -42,7 +42,7 @@ export default class Board extends React.Component {
       {info}
         <div className='board-grid'>
           {range(CELLS).map((row) => {
-            return <div className='cell-grid' key={row}></div>
+            return <Cell key={row} />
           })}
         </div>
       </div>

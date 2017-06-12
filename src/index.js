@@ -8,10 +8,6 @@ import battleshipApp from './redux/reducer.js';
 import { startPositioning, endPositioning } from './redux/actions/positioning.js';
 
 const store = createStore(battleshipApp);
-/*const Test = ({tester}) => {
-  return <h1>{tester}</h1>;
-}
-*/
 
 class App extends React.Component {
   constructor(data) {

@@ -11,7 +11,12 @@ export default class Battleship extends React.Component {
 
   constructor(data) {
     super(data);
-    this.state = { deployed: false, selected: false }
+    this.state = {
+      deployed: false,
+      selected: false,
+      size: null,
+      coordinates: []
+    }
   }
 
   componentDidMount() {

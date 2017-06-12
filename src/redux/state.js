@@ -1,8 +1,8 @@
 const defaultState = {
-  gameOver: false,
   gameStarted: false,
-  battleshipPositioning: false,
-  battleshipInPositioning: [],
-  battleshipCount: 5
+  gameOver: false,
+  battleShipCount: 5,
+  battleShipInPositioning: false
 }
+
 module.exports = defaultState;

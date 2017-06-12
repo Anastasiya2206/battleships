@@ -1,5 +1,5 @@
 import defaultState from './state.js';
-import {startPositioning, endPositioning} from './actions/positioning.js';
+import { startPositioning, endPositioning } from './actions/positioning.js';
 
 let battleshipApp = (state = defaultState, action) => {
   switch(action.type) {

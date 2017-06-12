@@ -4,7 +4,7 @@
   "description": "JS implementation of the famous Battleships game",
   "main": "index.js",
   "scripts": {
-    "test": "test",
+    "test": "mocha",
     "start": "webpack-dev-server --port 3001 --open",
     "build": "webpack",
     "lint": "eslint js/"

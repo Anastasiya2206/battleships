@@ -1,11 +1,12 @@
 module.exports = {
   context: __dirname,
   entry: {
-    app: './src/index.js'
+    login: './src/components/login.js',
+    main: './src/index.js'
   },
   output: {
-    path: __dirname,
-    filename: "./lib/bundle.js"
+    path: __dirname + '/lib',
+    filename: "[name].js"
   },
   module: {
     loaders: [

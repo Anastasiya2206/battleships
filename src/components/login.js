@@ -14,7 +14,7 @@ export default class Login extends React.Component {
 
   render(){
     return <div className='login-box'>
-    <form method="POST" action="#" onSubmit={(e) => this.onSubmit(e)}>
+    <form method="POST" action="/join">
       Enter your username:
       <input type="text" name="username"/>
       <input type="submit" value="Submit"/>

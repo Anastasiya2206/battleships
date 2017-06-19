@@ -1,0 +1,52 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Battleships</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="Stefan Slaveykov">
+
+  <style type="text/css">
+    body { background: skyblue !important; }
+    .board-grid {
+      padding: 5px;
+      height: 535px;
+      width: 535px;
+      background-color: #25567B;
+      -webkit-border-radius: 5px;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+    }
+    .cell-grid {
+      vertical-align: top; /*clears the vertical space between rows*/
+      height: 50px;
+      width: 50px;
+      display: inline-block;
+      background-color: #99C2E1;
+      margin: 1px;
+      -webkit-border-radius: 2px;
+      -moz-border-radius: 2px;
+      border-radius: 2px;
+    }
+    .battleship-drawer { width: 540px; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px; }
+    .battleship-drawer .tiny { background: black; width: 50px; height: 50px; padding: 5px; -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px;}
+    .battleship-drawer .small { background: gray; width: 100px; height: 50px; padding: 5px;  -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px;}
+    .battleship-drawer .normal { background: blue; width: 150px; height: 50px; padding: 5px;  -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px;}
+    .battleship-drawer .big { background: green; width: 200px; height: 50px; padding: 5px;  -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px;}
+    .battleship-drawer .huge { background: yellow; width: 250px; height: 50px; padding: 5px;  -webkit-border-radius: 2px; -moz-border-radius: 2px; border-radius: 2px;}
+  </style>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div id="main" class="row"></div>
+    <div id="drawer"></div>
+  </div>
+  <script src="lib/bundle.js"></script>
+</body>
+</html>
+

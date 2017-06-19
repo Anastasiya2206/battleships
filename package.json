@@ -8,7 +8,7 @@
     "start": "webpack-dev-server --port 3001 --open",
     "build": "webpack",
     "lint": "eslint js/",
-    "start_server": "node src/server/index.js"
+    "server": "node src/server/index.js"
   },
   "repository": {
     "type": "git",
@@ -34,6 +34,7 @@
     "babel-preset-latest": "^6.24.1",
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-1": "^6.24.1",
+    "body-parser": "^1.17.2",
     "chai": "^4.0.2",
     "chai-http": "^3.0.0",
     "eslint": "^3.19.0",

@@ -4,6 +4,8 @@ const app = express();
 const port = process.env.PORT || 4000
 const publicPath = ''
 
+app.use('/', express.static('lib'))
+
 app.get('/', (req, res) => {
   res.send('Ping');
 });

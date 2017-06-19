@@ -14,3 +14,14 @@ describe('/', () => {
         });
   });
 });
+
+describe('/login', () => {
+  it('displays the login page', (done) => {
+    chai.request(app)
+        .get('/login')
+        .end((err, res) => {
+          expect(res).to.have.status(200);
+          done();
+        });
+  });
+});

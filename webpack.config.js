@@ -1,7 +1,7 @@
 module.exports = {
   context: __dirname,
   entry: {
-    login: './src/components/login.js',
+    login: './src/login.js',
     main: './src/index.js'
   },
   output: {

@@ -2,3 +2,5 @@ node_modules/*
 .babelrc
 .eslintrc
 lib/*
+test/npm-debug.log
+src/npm-debug.log

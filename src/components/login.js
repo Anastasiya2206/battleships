@@ -10,5 +10,4 @@ const Login = () => (
     </form>
   </div>
 )
-
-ReactDom.render(<Login />, document.getElementById('login'))
+module.exports = Login

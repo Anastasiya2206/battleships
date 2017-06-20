@@ -1,8 +1,12 @@
 let express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
+
 const app = express();
 const port = process.env.PORT || 4000
+
+const server = require('http').createServer(app)
+const io = require('socket.io')(server)
 
 app.use('/', express.static('lib'))
 app.use(bodyParser.urlencoded({extended: true}));

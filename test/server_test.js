@@ -2,7 +2,7 @@ let chai = require('chai');
 let chaiHttp = require('chai-http');
 let expect = chai.expect;
 chai.use(chaiHttp);
-let app = require('../src/server/index');
+let app = require('../src/server/app');
 
 describe('/', () => {
   it('displays the index page', (done) => {

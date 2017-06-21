@@ -7,6 +7,11 @@ import Provider from './components/provider.js'
 import battleshipApp from './redux/reducer.js';
 import { startPositioning, endPositioning } from './redux/actions/positioning.js';
 
+import io from 'socket.io-client';
+const socket = io('http://localhost:5000')
+console.log(socket)
+socket.emit('add user', 'kur');
+
 const store = createStore(battleshipApp);
 
 class App extends React.Component {

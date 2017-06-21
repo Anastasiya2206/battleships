@@ -2,7 +2,7 @@ module.exports = {
   context: __dirname,
   entry: {
     login: './src/login.js',
-    main: './src/index.js'
+    app: './src/app.js'
   },
   output: {
     path: __dirname + '/lib',

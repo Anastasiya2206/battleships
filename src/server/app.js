@@ -25,6 +25,7 @@ app.post('/join', (req, res) => {
 });
 
 app.get('/play', (req, res) => {
+  let socket = io.connect('http://localhost:3700')
   res.sendFile('public/app.html', { 'root': __dirname })
 });
 

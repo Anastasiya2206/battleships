@@ -8,7 +8,7 @@
     "start": "webpack-dev-server --port 3001 --open",
     "build": "webpack",
     "lint": "eslint js/",
-    "server": "node src/server/index.js"
+    "server": "node src/server/app.js"
   },
   "repository": {
     "type": "git",

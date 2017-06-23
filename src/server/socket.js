@@ -4,6 +4,9 @@ let io = require('socket.io')(http);
 
 io.on('connection', function(socket){
   console.log('a user connected');
+  socket.on('user joined', (data) => {
+    console.log('user joined', data)
+  })
 });
 
 http.listen(5000, function(){

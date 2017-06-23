@@ -21,10 +21,11 @@ app.get('/login', (req, res) => {
 
 app.post('/join', (req, res) => {
   let userName = req.body.username;
-  res.redirect('/play');
+
+  res.redirect('/play/' + userName);
 });
 
-app.get('/play', (req, res) => {
+app.get('/play/:user', (req, res) => {
   res.sendFile('public/app.html', { 'root': __dirname })
 });
 

@@ -27,6 +27,18 @@ describe('/login', () => {
   });
 });
 
+describe('/play', () => {
+  it('displays the main play page', (done) => {
+    chai.request(app)
+        .get('/play')
+        .end((err, res) => {
+          expect(res).to.have.status(200);
+          expect(res.body).to.be.a('object');
+          done();
+        });
+  });
+});
+
 describe('/join', () => {
   it('create a connection for the player', (done) => {
     chai.request(app)

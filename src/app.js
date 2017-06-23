@@ -9,7 +9,17 @@ import { startPositioning, endPositioning } from './redux/actions/positioning.js
 
 import io from 'socket.io-client';
 const socket = io('http://localhost:5000')
-socket.emit('user joined', 'kur');
+let queryParams = location.search.split("?").pop()
+if(queryParams != ''){
+  let userParam = queryParams
+    .split('&')
+    .map((value) => value.split("="))
+    .filter((arr) => arr[0] == 'user')[0]
+
+  if(userParam){
+    socket.emit('user joined', userParam.pop())
+  }
+}
 
 const store = createStore(battleshipApp);
 

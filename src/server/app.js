@@ -5,9 +5,6 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = process.env.PORT || 4000
 
-const server = require('http').createServer(app)
-const io = require('socket.io')(server)
-
 app.use('/', express.static('lib'))
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -21,11 +18,10 @@ app.get('/login', (req, res) => {
 
 app.post('/join', (req, res) => {
   let userName = req.body.username;
-
-  res.redirect('/play/' + userName);
+  res.redirect('/play?user=' + userName);
 });
 
-app.get('/play/:user', (req, res) => {
+app.get('/play', (req, res) => {
   res.sendFile('public/app.html', { 'root': __dirname })
 });
 

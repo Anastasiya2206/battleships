@@ -7,6 +7,9 @@ io.on('connection', function(socket){
   socket.on('user joined', (data) => {
     console.log('user joined', data)
   })
+  socket.on('user playing', (data) => {
+    console.log('user is playing', data)
+  })
 });
 
 http.listen(5000, function(){

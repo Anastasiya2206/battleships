@@ -49,6 +49,7 @@ export default class Board extends React.Component {
     )
   }
 }
+
 Board.contextTypes = {
   store: React.PropTypes.object
 }

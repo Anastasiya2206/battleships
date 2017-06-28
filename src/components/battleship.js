@@ -48,7 +48,7 @@ class Battleship extends React.Component {
     let { store } = this.context;
 
     return connectDragSource(
-      <div className={this.props.type} id={this.props.type} onDrag={(e) => this.onDragStart(e)} onClick={(e) => this.onClick(e)}>
+      <div className={this.props.type} id={this.props.type} onClick={(e) => this.onClick(e)}>
         {this.props.type}
       </div>
     )

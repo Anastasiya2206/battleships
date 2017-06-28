@@ -7,7 +7,7 @@ import Provider from './components/provider.js'
 import battleshipApp from './redux/reducer.js';
 import { startPositioning, endPositioning } from './redux/actions/positioning.js';
 
-import io from 'socket.io-client';
+/*import io from 'socket.io-client';
 const socket = io('http://localhost:5000')
 let queryParams = location.search.split("?").pop()
 if(queryParams != ''){
@@ -20,7 +20,7 @@ if(queryParams != ''){
     socket.emit('user joined', userParam.pop())
   }
 }
-
+*/
 const store = createStore(battleshipApp);
 
 class App extends React.Component {

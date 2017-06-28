@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+import PropTypes from 'prop-types'
 import range from '../helpers/functions.js';
 import CONFIG from '../../config/config.js';
 
@@ -20,7 +21,6 @@ export default class Battleship extends React.Component {
   }
 
   componentDidMount() {
-    const { store } = this.context;
   }
 
   onDragStart(event) {
@@ -29,17 +29,17 @@ export default class Battleship extends React.Component {
 
   onClick(e) {
     this.setState({ selected: true });
-    this.store.dispatch(startPositioning(this.props.type));
   }
 
   render() {
     let { store } = this.context;
 
-    return <div className={this.props.type} id={this.props.type}>
+    return <div className={this.props.type} id={this.props.type} onDrag={(e) => this.onDragStart(e)} onClick={(e) => this.onClick(e)}>
               {this.props.type}
            </div>
   }
 }
-Battleship.contextTypes = {
-  store: React.PropTypes.object
+
+Battleship.propTypes = {
+  type: PropTypes.string
 }

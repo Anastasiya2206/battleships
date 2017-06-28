@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --compilers js:babel-core/register",
-    "start": "webpack-dev-server --port 3001 --open",
+    "start": "webpack-dev-server --port 4000 --hot",
     "build": "webpack",
     "lint": "eslint js/",
     "server": "node src/server/app.js",
@@ -50,6 +50,7 @@
   },
   "dependencies": {
     "express": "^4.15.3",
+    "prop-types": "^15.5.10",
     "socket.io": "^2.0.3"
   }
 }

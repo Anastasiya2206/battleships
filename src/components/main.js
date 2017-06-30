@@ -21,7 +21,7 @@ if(queryParams != ''){
 }
 */
 
-class App extends React.Component {
+class Main extends React.Component {
   constructor(data) {
     super(data);
   }
@@ -47,4 +47,4 @@ class App extends React.Component {
     )
   }
 }
-export default DragDropContext(HTML5Backend)(App);
+export default DragDropContext(HTML5Backend)(Main);

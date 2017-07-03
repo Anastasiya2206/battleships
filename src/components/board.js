@@ -3,7 +3,7 @@ import ReactDom from 'react-dom';
 import { range } from '../helpers/functions.js';
 import { createStore } from 'redux';
 import battleshipApp from '../redux/reducer.js';
-import { Cell } from './cell.js'
+import Cell from './cell.js'
 
 const CELLS = 100;
 

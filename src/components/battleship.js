@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import PropTypes from 'prop-types'
 import { DragSource } from 'react-dnd';
+import { connect } from 'react-redux';
 import range from '../helpers/functions.js';
 import { ItemTypes } from '../helpers/constants.js';
 import CONFIG from '../../config/config.js';
@@ -29,26 +30,16 @@ class Battleship extends React.Component {
     super(data);
     this.state = {
       deployed: false,
-      selected: false,
-      size: null,
       coordinates: []
     }
   }
 
-  onDragStart(event) {
-    event.dataTransfer.setData('ship', event.target.id);
-  }
-
-  onClick(e) {
-    this.setState({ selected: true });
-  }
-
   render() {
-    const { connectDragSource, isDragging } = this.props;
+    const { connectDragSource, isDragging, onBattleshipClick } = this.props;
     let { store } = this.context;
 
     return connectDragSource(
-      <div className={this.props.type} id={this.props.type} onClick={(e) => this.onClick(e)}>
+      <div className={this.props.type} id={this.props.type} onClick={(e) => onBattleshipClick(e)}>
         {this.props.type}
       </div>
     )
@@ -61,4 +52,16 @@ Battleship.propTypes = {
   isDragging: PropTypes.bool.isRequired
 }
 
+const mapStateToProps = (state) => {
+  return {}
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    onBattleshipClick: (e) => {
+      dispatch(startPositioning(e.target.getAttribute('id')))
+    }
+  }
+}
+Battleship = connect(mapStateToProps, mapDispatchToProps)(Battleship);
 export default DragSource(ItemTypes.BATTLESHIP, BattleshipSource, collect)(Battleship);

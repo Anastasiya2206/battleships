@@ -1,7 +1,7 @@
-export const startPositioning = (id) => {
-  return { type: 'START_POSITIONING', battleshipId: id };
+export const startPositioning = (type) => {
+  return { type: 'START_POSITIONING', battleshipType: type };
 }
 
-export const endPositioning = (id) => {
-  return { type: 'END_POSITIONING', battleshipId: id };
+export const endPositioning = (type) => {
+  return { type: 'END_POSITIONING', battleshipType: type };
 }

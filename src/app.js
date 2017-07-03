@@ -6,7 +6,7 @@ import { createStore } from 'redux';
 import battleshipApp from './redux/reducer.js';
 import { startPositioning, endPositioning } from './redux/actions/positioning.js';
 
-const store = createStore(battleshipApp);
+const store = createStore(battleshipApp, window.devToolsExtension && window.devToolsExtension());
 
 ReactDom.render(
   <Provider store={store}>

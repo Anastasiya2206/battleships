@@ -12,15 +12,6 @@ export default class Drawer extends React.Component {
                    battleshipsUsed: 0 };
   }
 
-  componentDidMount() {
-    const { store } = this.context;
-  }
-
-  onDragStart(event) {
-    console.log('dragg');
-    console.log(event.target);
-  }
-
   displayBattleships() {
     let display = [];
     let obj = this.state.battleshipTypes;

@@ -1,28 +1,13 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import PropTypes from 'prop-types'
-import { DragSource } from 'react-dnd';
 import { connect } from 'react-redux';
 import range from '../helpers/functions.js';
 import { ItemTypes } from '../helpers/constants.js';
 import CONFIG from '../../config/config.js';
 
-import { createStore } from 'redux';
 import battleshipApp from '../redux/reducer.js';
 import { startPositioning, endPositioning } from '../redux/actions/positioning.js';
-
-const BattleshipSource = {
-  beginDrag(props) {
-    return {};
-  }
-}
-
-function collect(connect, monitor) {
-  return {
-    connectDragSource: connect.dragSource(),
-    isDragging: monitor.isDragging()
-  }
-}
 
 class Battleship extends React.Component {
 
@@ -35,10 +20,9 @@ class Battleship extends React.Component {
   }
 
   render() {
-    const { connectDragSource, isDragging, onBattleshipClick } = this.props;
-    let { store } = this.context;
+    const { onBattleshipClick } = this.props;
 
-    return connectDragSource(
+    return (
       <div className={this.props.type} id={this.props.type} onClick={(e) => onBattleshipClick(e)}>
         {this.props.type}
       </div>
@@ -48,8 +32,6 @@ class Battleship extends React.Component {
 
 Battleship.propTypes = {
   type: PropTypes.string,
-  connectDragSource: PropTypes.func.isRequired,
-  isDragging: PropTypes.bool.isRequired
 }
 
 const mapStateToProps = (state) => {
@@ -63,5 +45,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     }
   }
 }
-Battleship = connect(mapStateToProps, mapDispatchToProps)(Battleship);
-export default DragSource(ItemTypes.BATTLESHIP, BattleshipSource, collect)(Battleship);
+export default connect(mapStateToProps, mapDispatchToProps)(Battleship);

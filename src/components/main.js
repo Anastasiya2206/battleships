@@ -40,9 +40,6 @@ class Main extends React.Component {
         <Board player={player1}/>
         <Drawer player={player1}/>
       </div>
-      <div className='col-lg-6'>
-        <Board player={player2}/>
-      </div>
       </div>
     )
   }

@@ -16,5 +16,12 @@ module.exports = {
         loaders: ['babel-loader']
       }
     ]
+  },
+  devServer: {
+    port: 4000,
+    compress: true,
+    publicPath: __dirname + '/lib',
+    hot: true,
+    watchContentBase: true
   }
 }

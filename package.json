@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --compilers js:babel-core/register",
-    "start": "webpack-dev-server --port 4000 --hot",
+    "start": "webpack-dev-server",
     "build": "webpack",
     "lint": "eslint js/",
     "server": "node src/server/app.js",

@@ -1,9 +1,14 @@
 const defaultState = {
   gameStarted: false,
   gameOver: false,
-  battleShipCount: 5,
-  currentBattleShip: null,
-  battleShipInPositioning: false
+  battleShips: {
+    tiny:   { position: [null, null] },
+    small:  { position: [null, null] },
+    normal: { position: [null, null] },
+    big:    { position: [null, null] },
+    huge:   { position: [null, null] },
+  },
+  currentSelectedBattleShip: null,
 }
 
 module.exports = defaultState;

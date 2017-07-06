@@ -20,7 +20,7 @@ if(queryParams != ''){
 }
 */
 
-export default class Main extends React.Component {
+export default class App extends React.Component {
   constructor(data) {
     super(data);
   }

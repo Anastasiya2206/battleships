@@ -33,6 +33,3 @@ export default class Drawer extends React.Component {
     )
   }
 }
-Drawer.contextTypes = {
-  store: React.PropTypes.object
-}

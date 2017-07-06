@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import HTML5Backend from 'react-dnd-html5-backend';
-import { DragDropContext } from 'react-dnd';
 
 import Board from './board.js';
 import Drawer from './drawer.js';
@@ -21,7 +20,7 @@ if(queryParams != ''){
 }
 */
 
-class Main extends React.Component {
+export default class Main extends React.Component {
   constructor(data) {
     super(data);
   }
@@ -44,4 +43,3 @@ class Main extends React.Component {
     )
   }
 }
-export default DragDropContext(HTML5Backend)(Main);

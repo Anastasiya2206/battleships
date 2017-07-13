@@ -1,3 +1,4 @@
+import merge from 'lodash/merge'
 import defaultState from './state.js';
 import { startPositioning, endPositioning } from './actions.js';
 
@@ -13,6 +14,10 @@ const battleshipApp = (state = defaultState, action) => {
       return Object.assign({}, state, {
         gameOver: true
       })
+    case 'UPDATE_POSITION':
+      return merge(
+        {}, state, action.data
+      )
     default:
       return defaultState;
   }
